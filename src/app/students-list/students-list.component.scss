@@ -1,0 +1,10 @@
+/* Estilos específicos para a tabela */
+table {
+  min-width: 768px;
+}
+
+@media (min-width: 768px) {
+  table {
+    min-width: 100%;
+  }
+}

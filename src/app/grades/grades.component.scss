@@ -1,0 +1,51 @@
+/* Estilos específicos para a página de notas */
+.grades-card {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* Estilo para a tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  
+  th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ececec;
+  }
+  
+  tr:hover {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Medidor circular */
+.circular-progress {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  
+  circle {
+    fill: none;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transition: stroke-dashoffset 0.5s ease;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+  .grades-table-container {
+    overflow-x: auto;
+  }
+  
+  table {
+    min-width: 600px;
+  }
+}

@@ -1,0 +1,369 @@
+<div class="flex relative min-h-screen bg-gray-50">
+  <!-- Cor de fundo suave -->
+  <!-- Sidebar -->
+  <div
+    class="fixed top-0 left-0 h-full w-64 z-30 pt-16 bg-primary text-white transition-transform duration-300 ease-in-out transform md:translate-x-0 md:static md:pt-0"
+    [class.-translate-x-full]="!mobileMenuOpen && isMobile"
+    style="height: calc(115vh - 64px)"
+  >
+    <div
+      class="p-4 border-b border-gray-700 flex justify-between items-center bg-primary-dark"
+    >
+      <h3 class="text-xl font-bold flex items-center">
+        <svg
+          class="w-6 h-6 mr-2"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h7"
+          ></path>
+        </svg>
+        Painel do Professor
+      </h3>
+      <button
+        (click)="toggleSidebar()"
+        class="md:hidden text-white focus:outline-none"
+        aria-label="Fechar menu"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="p-4">
+      <ul class="space-y-3">
+        <!-- Item Home -->
+        <li>
+          <a
+            href="/home"
+            class="flex items-center py-3 px-4 rounded-lg hover:bg-[#fc904f] hover:text-white transition-colors duration-200"
+          >
+            <svg
+              class="w-5 h-5 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              ></path>
+            </svg>
+            Home
+          </a>
+        </li>
+
+        <!-- Item Enviar E-books -->
+        <li>
+          <a
+            href="/teacher-dashboard"
+            class="flex items-center py-3 px-4 rounded-lg hover:bg-[#fc904f] hover:text-white transition-colors duration-200"
+          >
+            <svg
+              class="w-5 h-5 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+              ></path>
+            </svg>
+            Enviar E-books
+          </a>
+        </li>
+
+        <!-- Item Enviar Aulas Gravadas -->
+        <li>
+          <a
+            href="/upload-classes"
+            class="flex items-center py-3 px-4 rounded-lg hover:bg-[#fc904f] hover:text-white transition-colors duration-200"
+          >
+            <svg
+              class="w-5 h-5 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
+            </svg>
+            Enviar Aulas Gravadas
+          </a>
+        </li>
+
+        <!-- Item Consultar Alunos -->
+        <li class="active">
+          <a
+            href="/students-list"
+            class="flex items-center py-3 px-4 rounded-lg hover:bg-[#fc904f] hover:text-white transition-colors duration-200"
+          >
+            <svg
+              class="w-5 h-5 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+            Consultar Alunos
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Conteúdo Principal -->
+  <main class="w-full md:ml-64 p-4 md:p-8 min-h-screen">
+    <!-- Botão para abrir menu em mobile -->
+    <button
+      (click)="toggleSidebar()"
+      class="md:hidden mb-6 bg-primary text-white p-3 rounded-lg shadow-md hover:bg-primary-dark transition-colors"
+      aria-label="Abrir menu"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- Título da Página -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-primary">Meu Perfil</h1>
+      <p class="text-gray-600">Gerencie suas informações pessoais</p>
+    </div>
+
+    <!-- Card de Perfil -->
+    <div
+      class="max-w-3xl mx-auto bg-white rounded-xl shadow-md overflow-hidden"
+    >
+      <div class="bg-primary p-6">
+        <h2 class="text-xl font-bold text-white">Informações Pessoais</h2>
+      </div>
+
+      <div class="p-6">
+        <div class="p-6">
+          <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <!-- Nome Completo -->
+              <div class="md:col-span-2">
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Nome Completo</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  formControlName="nome"
+                  readonly
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                />
+              </div>
+
+              <!-- CPF -->
+              <div>
+                <label
+                  for="cpf"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >CPF</label
+                >
+                <input
+                  type="text"
+                  id="cpf"
+                  formControlName="cpf"
+                  readonly
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  placeholder="000.000.000-00"
+                  mask="000.000.000-00"
+                />
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  formControlName="email"
+                  readonly
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                />
+              </div>
+
+              <!-- Telefone -->
+              <div>
+                <label
+                  for="phone"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Telefone</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  formControlName="telefone"
+                  readonly
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  placeholder="(00) 00000-0000"
+                  mask="(00) 00000-0000"
+                />
+              </div>
+
+              <!-- Data de Nascimento -->
+              <div>
+                <label
+                  for="birthdate"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Data de Nascimento</label
+                >
+                <input
+                  type="date"
+                  id="birthdate"
+                  formControlName="birthdate"
+                  readonly
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <!-- Nota Geral -->
+              <div>
+                <label
+                  for="notaGeral"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Nota Geral do Aluno
+                </label>
+                <input
+                  type="text"
+                  id="notaGeral"
+                  formControlName="notaGeral"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                />
+              </div>
+
+              <!-- Nota Quiz -->
+              <div>
+                <label
+                  for="notaQuiz"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Nota dos Quizzes do Aluno
+                </label>
+                <input
+                  type="text"
+                  id="notaQuiz"
+                  formControlName="notaQuiz"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                />
+              </div>
+
+              <!-- Módulo -->
+              <div>
+                <label
+                  for="modulo"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Módulo do Aluno
+                </label>
+                <select
+                  id="modulo"
+                  formControlName="modulo"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                >
+                  <option value="Módulo I">Módulo I</option>
+                  <option value="Módulo II">Módulo II</option>
+                  <option value="Módulo III">Módulo III</option>
+                  <option value="Módulo IV">Módulo IV</option>
+                  <option value="Módulo V">Módulo V</option>
+                  <option value="Módulo VI">Módulo VI</option>
+                </select>
+              </div>
+
+              <!-- Pagamento -->
+              <div>
+                <label
+                  for="pagamento"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Pagamento
+                </label>
+                <select
+                  id="pagamento"
+                  formControlName="pagamento"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                >
+                  <option [ngValue]="true">Sim</option>
+                  <option [ngValue]="false">Não</option>
+                </select>
+              </div>
+
+              <!-- Botão de Salvar (AGORA DENTRO DO FORM) -->
+              <div class="flex justify-end mt-8">
+                <button
+                  type="submit"
+                  class="bg-secondary text-white px-6 py-2 rounded-lg font-medium hover:bg-[#fc953f] transition-colors"
+                >
+                  Salvar Alterações
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<app-footer></app-footer>

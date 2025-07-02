@@ -1,0 +1,55 @@
+<nav 
+  [ngClass]="{
+    'bg-transparent': isTransparent,
+    'bg-white shadow-md': !isTransparent
+  }"
+  class="fixed w-full z-50 transition-colors duration-300"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <div class="text-2xl font-bold text-primary">Seminário Arena</div>
+
+<!-- Menu Desktop -->
+<div class="hidden md:flex space-x-8 items-center">
+  <a (click)="scrollToSection('home')" class="text-primary hover:text-secondary cursor-pointer transition-colors">Home</a>
+  <a (click)="scrollToSection('about')" class="text-primary hover:text-secondary cursor-pointer transition-colors">Sobre Nós</a>
+  <div class="relative group">
+    <button class="text-primary hover:text-secondary cursor-pointer transition-colors focus:outline-none">Acadêmico <i class="fas fa-chevron-down ml-1 text-xs"></i></button>
+    <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 z-50">
+      <a (click)="scrollToSection('student')" class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-secondary cursor-pointer transition-colors">Área do Aluno</a>
+      <a (click)="scrollToSection('library')" class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-secondary cursor-pointer transition-colors">Biblioteca</a>
+      <a (click)="scrollToSection('curriculum')" class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-secondary cursor-pointer transition-colors">Conteúdo Programático</a>
+    </div>
+  </div>
+  <a (click)="scrollToSection('contact')" class="text-primary hover:text-secondary cursor-pointer transition-colors">Contato</a>
+  <a (click)="scrollToSection('login')" class="text-primary hover:text-secondary cursor-pointer transition-colors">Entrar</a>
+  <a (click)="scrollToSection('register')" class="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all">Cadastrar</a>
+</div>
+      <!-- Botão Menu Mobile -->
+      <button class="md:hidden text-primary" (click)="toggleMobileMenu()">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu Mobile -->
+  <div class="md:hidden bg-white shadow-lg" [class.hidden]="!mobileMenuOpen">
+    <div class="flex flex-col py-4">
+      <a (click)="scrollToSection('home')" class="text-primary hover:bg-light hover:text-secondary py-3 px-6 cursor-pointer transition-colors">Home</a>
+      <a (click)="scrollToSection('about')" class="text-primary hover:bg-light hover:text-secondary py-3 px-6 cursor-pointer transition-colors">Sobre Nós</a>
+      <div class="relative">
+        <button class="w-full text-left text-primary hover:bg-light hover:text-secondary py-3 px-6 flex justify-between items-center transition-colors" (click)="toggleAcademicMenu()">
+          Acadêmico <i class="fas ml-2 text-xs" [ngClass]="{'fa-chevron-down': !academicMenuOpen, 'fa-chevron-up': academicMenuOpen}"></i>
+        </button>
+        <div class="bg-light" [class.hidden]="!academicMenuOpen">
+          <a (click)="scrollToSection('student')" class="block py-3 px-10 text-primary hover:bg-gray-100 hover:text-secondary cursor-pointer transition-colors">Área do Aluno</a>
+          <a (click)="scrollToSection('library')" class="block py-3 px-10 text-primary hover:bg-gray-100 hover:text-secondary cursor-pointer transition-colors">Biblioteca</a>
+          <a (click)="scrollToSection('curriculum')" class="block py-3 px-10 text-primary hover:bg-gray-100 hover:text-secondary cursor-pointer transition-colors">Conteúdo Programático</a>
+        </div>
+      </div>
+      <a (click)="scrollToSection('contact')" class="text-primary hover:bg-light hover:text-secondary py-3 px-6 cursor-pointer transition-colors">Contato</a>
+      <a (click)="scrollToSection('login')" class="text-primary hover:bg-light hover:text-secondary py-3 px-6 cursor-pointer transition-colors">Entrar</a>
+      <a (click)="scrollToSection('register')" class="bg-primary text-white py-3 px-6 mt-2 font-medium hover:bg-opacity-90 transition-all">Cadastrar</a>
+    </div>
+  </div>
+</nav>

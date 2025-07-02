@@ -1,0 +1,27 @@
+/* Estilos específicos para a página de aulas gravadas */
+.class-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Estilo para o botão de assistir */
+.watch-btn {
+  background-color: #fc904f;
+  color: white;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: #fc953f;
+  }
+}
+
+/* Responsividade para thumbnails */
+@media (max-width: 640px) {
+  .class-card {
+    max-width: 100%;
+  }
+}

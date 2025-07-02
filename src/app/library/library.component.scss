@@ -1,0 +1,94 @@
+/* Ajuste de altura para o container principal */
+.flex.min-h-screen {
+  min-height: calc(100vh - 128px); /* Considera header + footer */
+}
+
+/* Estilos para a sidebar */
+.sidebar-container {
+  position: fixed;
+  top: 0px;          // Altura do header
+  bottom: 64px;        // Altura do footer
+  left: 0;
+  width: 256px;
+  overflow-y: auto;
+  background-color: #26496f;
+  z-index: 30;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+
+  &.-translate-x-full {
+    transform: translateX(-100%);
+  }
+
+  @media (min-width: 768px) {
+    position: static;
+    height: calc(100vh - 128px); // Ajusta a altura para desktop
+    overflow-y: auto;
+  }
+}
+
+/* Estilo hover laranja para todos os itens da sidebar */
+.sidebar-container a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+  &:hover {
+    background-color: #fc904f !important;
+    color: white !important;
+  }
+}
+
+/* Ajuste para o conteúdo principal */
+.main-content {
+  width: 100%;
+  
+  @media (min-width: 768px) {
+    width: calc(100% - 256px);
+    margin-left: 256px;
+  }
+}
+
+/* Estilo para o overlay */
+.overlay {
+  z-index: 20;
+}
+
+/* Estilo para cards de e-book */
+.ebook-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Botão de download acessível */
+.download-btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Placeholder para capa do livro */
+.ebook-cover {
+  background: linear-gradient(135deg, #f0f0f0 25%, #e0e0e0 25%, #e0e0e0 50%, #f0f0f0 50%, #f0f0f0 75%, #e0e0e0 75%);
+  background-size: 20px 20px;
+}
+
+/* Responsividade */
+@media (max-width: 767px) {
+  main {
+    padding-top: 56px;
+  }
+  
+  .sidebar {
+    width: 80%;
+    max-width: 320px;
+  }
+
+.sidebar-mobile-top {
+    top: 64px; /* Altura do header */
+    height: calc(100vh - 64px); /* Altura total menos header */
+  }
+}

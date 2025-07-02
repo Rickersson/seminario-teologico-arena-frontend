@@ -1,0 +1,37 @@
+/* Estilos específicos para o painel do professor */
+.upload-area {
+  border: 2px dashed #d1d5db;
+  border-radius: 0.5rem;
+  transition: border-color 0.3s ease;
+  
+  &:hover {
+    border-color: #fc904f;
+  }
+}
+
+.upload-icon {
+  color: #9ca3af;
+  font-size: 2rem;
+}
+
+/* Animação de upload */
+.upload-progress {
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  background-color: #e5e7eb;
+}
+
+.upload-progress-bar {
+  height: 100%;
+  background-color: #fc904f;
+  transition: width 0.3s ease;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .upload-grid {
+    grid-template-columns: 1fr;
+  }
+}
+//src/app/teacher-dashboard/teacher-dashboard.scss(scss da página para o professor salvar ebooks)

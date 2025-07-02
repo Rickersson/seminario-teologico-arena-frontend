@@ -1,0 +1,161 @@
+/* ESTILOS ESPECÍFICOS PARA NAVBAR */
+html {
+      scroll-behavior: smooth;
+    }
+
+
+    
+nav {
+  a {
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+
+  .nav-link {
+    color: #26496f;
+    cursor: pointer; /* ADICIONADO */
+    &:hover {
+      color: #fc904f;
+    }
+  }
+
+  .mobile-menu-item {
+    color: #26496f;
+    padding: 0.5rem 1rem;
+    cursor: pointer; /* ADICIONADO */
+    &:hover {
+      background-color: #ececec;
+      color: #fc904f;
+    }
+  }
+
+  .register-button {
+    background-color: #fc904f;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer; /* ADICIONADO */
+    &:hover {
+      background-color: #1a3652;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      color: white !important;
+      opacity: 0.95;
+      cursor: pointer;
+    }
+  }
+}
+
+/* BOTÃO HERO */
+.hero-button {
+  background-color: #fc904f;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 0.875rem;
+  &:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+  }
+  @media (max-width: 640px) {
+    padding: 10px 20px;
+    font-size: 0.75rem;
+  }
+}
+
+/* BOTÃO DE CARD */
+.card-button {
+  background-color: #fc904f;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+  }
+  @media (max-width: 768px) {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+  }
+}
+
+/* CARTÕES DE FUNCIONALIDADE */
+.feature-card {
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* CORES */
+.text-primary {
+  color: #26496f;
+}
+.text-secondary {
+  color: #fc904f;
+}
+.bg-primary {
+  background-color: #26496f;
+}
+.bg-secondary {
+  background-color: #fc904f;
+}
+.bg-light {
+  background-color: #ececec;
+}
+
+/* AJUSTES DE RESPONSIVIDADE */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+footer ul li a {
+  font-size: 0.875rem;
+}
+
+footer {
+  text-align: center;
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+}

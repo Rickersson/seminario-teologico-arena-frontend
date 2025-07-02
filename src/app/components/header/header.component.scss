@@ -1,0 +1,46 @@
+/* Estilo para links */
+.text-primary {
+  color: #26496f; // Azul primário
+}
+
+.text-secondary {
+  color: #fc904f; // Laranja secundário
+}
+
+/* Transições globais */
+.transition-colors {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Botão "Cadastrar" */
+.bg-secondary {
+  background-color: #fc904f;
+}
+
+.bg-secondary:hover {
+  background-color: #1e3c52; // Azul escuro
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* Estilo para links e menus */
+a {
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Estilo para menus mobile */
+.text-primary:hover {
+  color: #fc904f; // Laranja secundário
+}
+
+.bg-light {
+  background-color: #ececec;
+}
+
+.bg-light:hover {
+  background-color: #d3d3d3;
+}

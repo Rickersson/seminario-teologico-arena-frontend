@@ -1,0 +1,60 @@
+/* Estilos para a página de perfil */
+.profile-card {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.profile-header {
+  background-color: #26496f;
+  padding: 1.5rem;
+}
+
+.input-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  
+  &:focus {
+    outline: none;
+    border-color: #fc904f;
+    box-shadow: 0 0 0 3px rgba(252, 144, 79, 0.2);
+  }
+}
+
+.btn-save {
+  background-color: #fc904f;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: #fc953f;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+  .profile-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .input-field {
+    padding: 0.65rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}

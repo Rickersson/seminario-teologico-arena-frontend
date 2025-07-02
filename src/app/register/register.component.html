@@ -1,0 +1,237 @@
+<!--src/app/register/register.html-->
+
+<div
+  class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
+>
+  <div class="max-w-md w-full space-y-8">
+    <div>
+    
+      <h2 class="mt-6 text-center text-3xl font-extrabold text-primary">
+        Crie sua conta
+      </h2>
+      <p class="mt-2 text-center text-sm text-gray-600">
+        Já tem uma conta?
+        <a
+          routerLink="/login"
+          class="font-medium text-secondary hover:text-secondary-dark"
+        >
+          Faça login
+        </a>
+      </p>
+    </div>
+    <form
+      class="mt-8 space-y-6"
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="rounded-md shadow-sm space-y-4">
+        <!-- Nome Completo -->
+        <div>
+          <label for="fullname" class="sr-only">Nome Completo</label>
+          <input
+            id="fullname"
+            name="fullname"
+            type="text"
+            autocomplete="name"
+            required
+            formControlName="nome"
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent focus:z-10 sm:text-sm"
+            placeholder="Nome Completo"
+          />
+          <div
+            *ngIf="
+              registerForm.get('nome')?.invalid &&
+              registerForm.get('nome')?.touched
+            "
+            class="text-red-500 text-xs mt-1"
+          >
+            Campo obrigatório
+          </div>
+        </div>
+
+        <!-- CPF -->
+        <div>
+          <label for="cpf" class="sr-only">CPF</label>
+          <input
+            id="cpf"
+            name="cpf"
+            type="text"
+            autocomplete="off"
+            required
+            formControlName="cpf"
+            mask="000.000.000-00"
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent focus:z-10 sm:text-sm"
+            placeholder="CPF"
+          />
+          <div
+            *ngIf="
+              registerForm.get('cpf')?.invalid &&
+              registerForm.get('cpf')?.touched
+            "
+            class="text-red-500 text-xs mt-1"
+          >
+            Campo obrigatório
+          </div>
+          <div
+            *ngIf="
+              registerForm.get('cpf')?.hasError('maxlength') &&
+              registerForm.get('cpf')?.touched
+            "
+            class="text-red-500 text-xs mt-1"
+          >
+            CPF deve ter no máximo 11 dígitos
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="sr-only">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            formControlName="email"
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent focus:z-10 sm:text-sm"
+            placeholder="Email"
+          />
+          <div
+            *ngIf="
+              registerForm.get('email')?.hasError('required') &&
+              registerForm.get('email')?.touched
+            "
+            class="text-red-500 text-xs mt-1"
+          >
+            Email obrigatório
+          </div>
+          <div
+            *ngIf="
+              registerForm.get('email')?.hasError('email') &&
+              registerForm.get('email')?.touched
+            "
+            class="text-red-500 text-xs mt-1"
+          >
+            Email inválido
+          </div>
+        </div>
+
+        <!-- Telefone -->
+        <div>
+          <label for="phone" class="sr-only">Telefone</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            required
+            formControlName="telefone"
+            mask="(00) 00000-0000"
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent focus:z-10 sm:text-sm"
+            placeholder="Telefone"
+          />
+          <div
+            *ngIf="
+              registerForm.get('telefone')?.invalid &&
+              registerForm.get('telefone')?.touched
+            "
+            class="text-red-500 text-xs mt-1"
+          >
+            Campo obrigatório
+          </div>
+           <div
+            *ngIf="
+              registerForm.get('telefone')?.hasError('maxlength') &&
+              registerForm.get('telefone')?.touched
+            "
+            class="text-red-500 text-xs mt-1"
+          >
+            O Telefone deve ter no máximo 11 dígitos
+          </div>
+        </div>
+
+        <!-- Data de Nascimento -->
+        <div>
+          <label for="birthdate" class="sr-only">Data de Nascimento</label>
+          <input
+            id="birthdate"
+            name="birthdate"
+            type="date"
+            autocomplete="bday"
+            required
+            formControlName="birthdate"
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent focus:z-10 sm:text-sm"
+          />
+          <div
+            *ngIf="
+              registerForm.get('birthdate')?.invalid &&
+              registerForm.get('birthdate')?.touched
+            "
+            class="text-red-500 text-xs mt-1"
+          >
+            Campo obrigatório
+          </div>
+        </div>
+
+        <!-- Senha -->
+        <div>
+          <label for="password" class="sr-only">Senha</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="new-password"
+            required
+            formControlName="senha"
+            class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent focus:z-10 sm:text-sm"
+            placeholder="Senha"
+          />
+          <div
+            *ngIf="
+              registerForm.get('password')?.invalid &&
+              registerForm.get('password')?.touched
+            "
+            class="text-red-500 text-xs mt-1"
+          >
+            Mínimo de 6 caracteres
+          </div>
+        </div>
+
+        <!-- Confirmar Senha -->
+      </div>
+
+      <div class="flex items-center">
+        <input
+          id="terms"
+          name="terms"
+          type="checkbox"
+          required
+          class="h-4 w-4 text-secondary focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
+        />
+        <label for="terms" class="ml-2 block text-sm text-gray-900">
+          Concordo com os
+          <a
+            href="#"
+            class="font-medium text-secondary hover:text-secondary-dark"
+            >Termos de Serviço</a
+          >
+          e
+          <a
+            href="#"
+            class="font-medium text-secondary hover:text-secondary-dark"
+            >Política de Privacidade</a
+          >
+        </label>
+      </div>
+
+      <div>
+        <button
+          type="submit"
+          class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-secondary hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
+        >
+          Criar Conta
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

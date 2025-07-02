@@ -1,0 +1,113 @@
+<section id="home" class="pt-16">
+  <div class="relative h-[500px] md:h-[600px] overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-80"></div>
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-white px-4 text-center animate-fade-in">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Formando Líderes na Fé</h1>
+      <p class="text-lg md:text-xl max-w-2xl mb-8 px-4">
+        Um seminário comprometido com a formação teológica e espiritual de qualidade.
+      </p>
+      <button 
+        (click)="scrollToSection('courses')"
+        class="hero-button"
+      >
+        Conheça nossos cursos
+        <i class="fas fa-arrow-down ml-3"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="py-12 md:py-16 bg-light">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl md:text-3xl font-bold text-center text-primary mb-8 md:mb-12">Por que estudar conosco?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      <div class="feature-card bg-white p-6 rounded-lg shadow-md">
+        <div class="w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center mb-4">
+          <i class="fas fa-user-graduate text-xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-primary">Qualificação</h3>
+        <p class="text-gray-600">Formação teológica sólida com professores especializados e experiência prática em ministérios.</p>
+      </div>
+      
+      <div class="feature-card bg-white p-6 rounded-lg shadow-md">
+        <div class="w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center mb-4">
+          <i class="fas fa-laptop-code text-xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-primary">Metodologia Moderna</h3>
+        <p class="text-gray-600">Aulas dinâmicas com uso de tecnologia, estudos bíblicos interativos e projetos práticos.</p>
+      </div>
+      
+      <div class="feature-card bg-white p-6 rounded-lg shadow-md">
+        <div class="w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center mb-4">
+          <i class="fas fa-book-open text-xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-primary">Plataforma de Estudos</h3>
+        <p class="text-gray-600">Acesso a uma biblioteca digital, materiais didáticos e ferramentas de estudo 24/7.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="courses" class="py-12 md:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white md:bg-opacity-90 p-6 md:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-8 md:mb-0">
+       <img 
+  src="https://placehold.co/600x400/26496f/ffffff?text=Curso+Básico+de+Teologia" 
+  alt="Curso Básico de Teologia" 
+  class="w-full h-64 md:h-80 object-cover rounded-xl border-2"
+/>
+      </div>
+      <div class="md:w-1/2 md:pl-8 text-center md:text-left">
+        <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4">Curso Básico de Teologia</h2> 
+        <p class="text-gray-600 mb-6">
+          Ideal para quem deseja iniciar os estudos bíblicos fundamentais. Compreensão da Palavra de Deus, história da Igreja e fundamentos teológicos.
+        </p>
+        <button 
+          (click)="openWhatsApp()"
+          class="card-button"
+        >
+          Saiba mais
+          <i class="fas fa-arrow-right ml-3"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="academic" class="py-12 md:py-16 bg-light">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center">
+         <div class="md:w-1/2 mb-8 md:mb-0">
+       <img 
+  src="https://placehold.co/600x400/26496f/ffffff?text=Como+Funciona+o+Curso?" 
+  alt="Como funciona" 
+  class="w-full h-64 md:h-80 object-cover rounded-xl border-2"
+/>
+      </div>
+      <div class="md:w-1/2 md:pl-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-primary mb-6">Como funciona o curso?</h2> 
+        <ul class="space-y-4">
+          <li class="flex items-start">
+            <div class="w-6 h-6 bg-secondary text-white rounded-full flex items-center justify-center mr-3 mt-1">
+              <i class="fas fa-check text-xs"></i>
+            </div>
+            <span class="text-gray-700">Aulas presenciais e online com professores qualificados</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-6 h-6 bg-secondary text-white rounded-full flex items-center justify-center mr-3 mt-1">
+              <i class="fas fa-book text-xs"></i>
+            </div>
+            <span class="text-gray-700">Materiais didáticos inclusos (livros, vídeos, estudos bíblicos)</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-6 h-6 bg-secondary text-white rounded-full flex items-center justify-center mr-3 mt-1">
+              <i class="fas fa-credit-card text-xs"></i>
+            </div>
+            <span class="text-gray-700">Valor acessível com parcelamento em até 12x</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
