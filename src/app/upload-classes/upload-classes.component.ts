@@ -51,7 +51,7 @@ export class UploadClassesComponent implements OnInit {
 
    const payload = this.classForm.value;
 
-      this.http.post('http://localhost:3000/aulas-gravadas', payload).subscribe({
+      this.http.post('https://seminario-teologico-arena-backend.onrender.com/aulas-gravadas', payload).subscribe({
         next: () => {
           this.uploading = false;
           alert('Aula enviada com sucesso!');

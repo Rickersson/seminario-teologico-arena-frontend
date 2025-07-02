@@ -16,7 +16,7 @@ export interface Ebook {
   providedIn: 'root'
 })
 export class EbooksService {
-  private baseUrl = 'http://localhost:3000/ebooks'; 
+  private baseUrl = 'https://seminario-teologico-arena-backend.onrender.com/ebooks'; 
 
   constructor(private http: HttpClient) {}
 

@@ -20,7 +20,7 @@ export interface Aluno {
   providedIn: 'root',
 })
 export class AlunoService {
-  private apiUrl = 'http://localhost:3000/alunos';
+  private apiUrl = 'https://seminario-teologico-arena-backend.onrender.com/alunos';
 
   constructor(private http: HttpClient) {}
 

@@ -104,7 +104,7 @@ getUserIdFromToken(): string | null {
 
       console.log('Enviando para API:', payload);
 
-      this.http.put(`http://localhost:3000/alunos/${userId}`, payload).subscribe({
+      this.http.put(`https://seminario-teologico-arena-backend.onrender.com/alunos/${userId}`, payload).subscribe({
         next: () => alert('Alterações salvas com sucesso!'),
         error: (err) => {
           console.error(err);

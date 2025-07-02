@@ -55,7 +55,7 @@ export class RecordedClassesComponent implements OnInit {
 
   loadClasses(): void {
     this.http
-      .get<AulaGravada[]>('http://localhost:3000/aulas-gravadas')
+      .get<AulaGravada[]>('https://seminario-teologico-arena-backend.onrender.com/aulas-gravadas')
       .subscribe({
         next: (data) => {
           this.classes = data;
