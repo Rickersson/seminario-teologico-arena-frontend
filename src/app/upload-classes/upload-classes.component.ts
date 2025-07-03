@@ -51,7 +51,7 @@ export class UploadClassesComponent implements OnInit {
 
    const payload = this.classForm.value;
 
-      this.http.post('https://seminario-phi.vercel.app/aulas-gravadas', payload).subscribe({
+      this.http.post('https://seminario-teologico-arena-backend.vercel.app/aulas-gravadas', payload).subscribe({
         next: () => {
           this.uploading = false;
           alert('Aula enviada com sucesso!');

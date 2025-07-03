@@ -16,7 +16,7 @@ export interface Ebook {
   providedIn: 'root'
 })
 export class EbooksService {
-  private baseUrl = 'https://seminario-phi.vercel.app/ebooks'; 
+  private baseUrl = 'https://seminario-teologico-arena-backend.vercel.app/ebooks'; 
 
   constructor(private http: HttpClient) {}
 

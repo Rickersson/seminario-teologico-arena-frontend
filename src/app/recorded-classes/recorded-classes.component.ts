@@ -55,7 +55,7 @@ export class RecordedClassesComponent implements OnInit {
 
   loadClasses(): void {
     this.http
-      .get<AulaGravada[]>('https://seminario-phi.vercel.app/aulas-gravadas')
+      .get<AulaGravada[]>('https://seminario-teologico-arena-backend.vercel.app/aulas-gravadas')
       .subscribe({
         next: (data) => {
           this.classes = data;
