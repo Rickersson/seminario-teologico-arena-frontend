@@ -104,7 +104,7 @@ getUserIdFromToken(): string | null {
 
       console.log('Enviando para API:', payload);
 
-      this.http.put(`https://seminario-teologico-arena-backend-3.vercel.app/alunos/${userId}`, payload).subscribe({
+      this.http.put(`https://seminario-phi.vercel.app/alunos/${userId}`, payload).subscribe({
         next: () => alert('Alterações salvas com sucesso!'),
         error: (err) => {
           console.error(err);
