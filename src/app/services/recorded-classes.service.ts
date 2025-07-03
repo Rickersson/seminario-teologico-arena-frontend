@@ -19,7 +19,7 @@ export interface AulaGravada {
   providedIn: 'root'
 })
 export class RecordedClassesService {
-  private readonly API_URL = 'https://seminario-teologico-arena-backend.onrender.com/aulas-gravadas'; 
+  private readonly API_URL = 'https://seminario-teologico-arena-backend-3.vercel.app/aulas-gravadas'; 
 
   constructor(private http: HttpClient) {}
 

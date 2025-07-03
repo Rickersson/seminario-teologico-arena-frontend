@@ -16,7 +16,7 @@ export interface Ebook {
   providedIn: 'root'
 })
 export class EbooksService {
-  private baseUrl = 'https://seminario-teologico-arena-backend.onrender.com/ebooks'; 
+  private baseUrl = 'https://seminario-teologico-arena-backend-3.vercel.app/ebooks'; 
 
   constructor(private http: HttpClient) {}
 

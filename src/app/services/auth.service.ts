@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private apiUrl = 'https://seminario-teologico-arena-backend.onrender.com/auth/login';
+  private apiUrl = 'https://seminario-teologico-arena-backend-3.vercel.app/auth/login';
 
   constructor(private http: HttpClient) {}
 
