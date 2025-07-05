@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FooterComponent } from '../components/footer/footer.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pagamento',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './pagamento.component.html',
   styleUrl: './pagamento.component.scss',
   standalone: true,
+  
 })
 export class PagamentoComponent implements OnInit {
   isMobile = false;
