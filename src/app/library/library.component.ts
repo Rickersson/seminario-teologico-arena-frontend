@@ -35,7 +35,11 @@ export class LibraryComponent implements OnInit {
     private alunoService: AlunoService 
   ) {}
 
-  ngOnInit() {this.alunoService.getAlunoLogado().subscribe({
+  ngOnInit() {
+    this.checkMobile(); 
+    
+    this.alunoService.getAlunoLogado().subscribe({
+    
     next: (aluno) => {
       this.moduloAtual = aluno.modulo;
       this.loadEbooks(); 
