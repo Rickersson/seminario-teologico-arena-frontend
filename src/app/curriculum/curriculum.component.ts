@@ -17,8 +17,8 @@ export class CurriculumComponent {
 
   curricula = [
     { 
-      title: 'Módulo I - Fundamentos', 
-      description: 'Introdução aos conceitos básicos e fundamentos essenciais', 
+      title: 'Módulo I ', 
+      description: 'Grade curricular do primeiro módulo', 
       filePath: 'assets/modulo1.pdf',
       image: 'assets/logo-seminario-removebg-preview.png'
     },  { 
@@ -34,8 +34,8 @@ export class CurriculumComponent {
     },
     
     { 
-      title: 'Módulo IV - Especialização', 
-      description: 'Foco em áreas específicas de atuação', 
+      title: 'Módulo IV', 
+      description: 'Grade curricular do quarto módulo', 
       filePath: 'assets/pdfs/modulo4.pdf',
       image: 'assets/logo-seminario-removebg-preview.png'
     },  { 
