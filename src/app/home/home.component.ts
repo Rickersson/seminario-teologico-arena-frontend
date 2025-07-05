@@ -15,6 +15,7 @@ export class HomeComponent {
   isTransparent = true;
   mobileMenuOpen = false;
   academicMenuOpen = false;
+  
   aboutMenuOpen = false;
 
   auth$ = this.authService.authState$;
