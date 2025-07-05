@@ -59,6 +59,20 @@ export class HomeComponent {
   this.aboutMenuOpen = !this.aboutMenuOpen;
 }
 
+downloadFile(fileUrl: string, fileName: string) {
+  const link = document.createElement('a');
+  link.href = fileUrl;
+  link.download = fileName;
+  link.target = '_blank'; // opcional, mas ajuda em alguns navegadores
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+downloadPdf() {
+  this.downloadFile('assets/pdfs/sobre_nos.pdf', 'sobre_nos.pdf');
+}
+
   openWhatsApp() {
     window.open(
       'https://wa.me/+5521980996928?text=Gostaria+de+saber+mais+sobre+o+seminário+teológico+arena.',

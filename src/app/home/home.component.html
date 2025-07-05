@@ -151,11 +151,8 @@
         </button>
         <div class="bg-gray-50" [class.hidden]="!aboutMenuOpen">
           <a
-            href="assets/pdfs/sobre_nos.pdf"
-            download
-            target="_blank"
-            rel="noopener"
             (click)="mobileMenuOpen = false"
+            (click)="downloadPdf()"
             class="block px-8 py-2 hover:bg-gray-100"
           >
             Sobre nós
