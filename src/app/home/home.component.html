@@ -159,19 +159,19 @@
           </button>
           <div class="bg-gray-50" [class.hidden]="!academicMenuOpen">
             <a
-              href="/area-do-aluno"
+              routerLink="/area-do-aluno"
               (click)="mobileMenuOpen = false"
               class="block px-8 py-2 hover:bg-gray-100"
               >Área do Aluno</a
             >
             <a
-              href="/biblioteca"
+              routerLink="/biblioteca"
               (click)="mobileMenuOpen = false"
               class="block px-8 py-2 hover:bg-gray-100"
               >Biblioteca</a
             >
             <a
-              (click)="scrollToSection('academic'); mobileMenuOpen = false"
+              routerLink="/grade-curricular" mobileMenuOpen = "false"
               class="block px-8 py-2 hover:bg-gray-100 cursor-pointer"
               >Conteúdo Programático</a
             >
