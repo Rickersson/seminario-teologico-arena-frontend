@@ -3,13 +3,14 @@ import { NavbarService } from '../services/navbar.service';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from "../components/footer/footer.component";
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [CommonModule, RouterModule]
+  imports: [CommonModule, RouterModule, FooterComponent]
 })
 export class HomeComponent {
   isTransparent = true;
