@@ -214,4 +214,8 @@ export class LibraryComponent implements OnInit {
   toggleAcademicMenu() {
     this.academicMenuOpen = !this.academicMenuOpen;
   }
+
+   makeQuiz(url: string): void {
+    window.open(url, '_blank');
+  }
 }

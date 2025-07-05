@@ -38,10 +38,11 @@ private fb = inject(FormBuilder);
   title: ['', [Validators.required, Validators.minLength(5)]],
   author: ['', [Validators.required]],
   category: ['', [Validators.required]],
-  description: ['', [Validators.required, Validators.minLength(20)]],
+  description: ['', Validators.required],
   modulo: ['', [Validators.required]],
   cover: [null],
-   file: [null, [Validators.required]]
+   file: [null, [Validators.required]],
+   quizLink:['',Validators.required]
 });
 }
   ngOnInit(): void {
@@ -112,6 +113,7 @@ onSubmit(): void {
     formData.append('autor', this.ebookForm.get('author')?.value);
     formData.append('categoria', this.ebookForm.get('category')?.value);
     formData.append('descricao', this.ebookForm.get('description')?.value);
+    formData.append('quizLink', this.ebookForm.get('quizLink')?.value);
 
     const file = this.ebookForm.get('file')?.value;
     if (file) {

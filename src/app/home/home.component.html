@@ -8,56 +8,109 @@
     <div class="flex justify-between h-16 items-center">
       <!-- Logo -->
       <div class="flex items-center">
-        <img src="assets/logo-seminario-removebg-preview.png" class="h-8 w-auto" style="width: 40px;" />
-        <span class="ml-2 text-lg font-bold text-primary hidden sm:inline">Seminário Teológico Arena</span>
+        <img
+          src="assets/logo-seminario-removebg-preview.png"
+          class="h-8 w-auto"
+          style="width: 40px"
+        />
+        <span class="ml-2 text-lg font-bold text-primary hidden sm:inline"
+          >Seminário Teológico Arena</span
+        >
       </div>
 
       <!-- Menu Desktop -->
       <ng-container *ngIf="auth$ | async as auth">
         <div class="hidden md:flex items-center space-x-6">
-          <a (click)="scrollToSection('home')" class="nav-link cursor-pointer">Home</a>
-         <div class="relative group">
-  <button class="nav-link flex items-center">
-    Sobre Nós
-    <svg class="ml-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4-4-4a1 1 0 010-1.414z" />
-    </svg>
-  </button>
-  <div class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md py-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 z-50">
-    <a href="/assets/pdfs/sobre_nos.pdf" download class="block px-4 py-2 text-sm hover:bg-gray-100">Sobre Nós (PDF)</a>
-    <a href="/grade-curricular" class="block px-4 py-2 text-sm hover:bg-gray-100">Grade Curricular</a>
-  </div>
-</div>
+          <a (click)="scrollToSection('home')" class="nav-link cursor-pointer"
+            >Home</a
+          >
+          <div class="relative group">
+            <button class="nav-link flex items-center">
+              Sobre Nós
+              <svg class="ml-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4-4-4a1 1 0 010-1.414z"
+                />
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md py-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 z-50"
+            >
+              <a
+                href="/assets/pdfs/sobre_nos.pdf"
+                download
+                class="block px-4 py-2 text-sm hover:bg-gray-100"
+                >Sobre Nós (PDF)</a
+              >
+              <a
+                href="/grade-curricular"
+                class="block px-4 py-2 text-sm hover:bg-gray-100"
+                >Grade Curricular</a
+              >
+            </div>
+          </div>
 
           <!-- Acadêmico (aluno) -->
           <div *ngIf="auth.role === 'aluno'" class="relative group">
             <button class="nav-link flex items-center">
               Acadêmico
               <svg class="ml-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4-4-4a1 1 0 010-1.414z"></path>
+                <path
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4-4-4a1 1 0 010-1.414z"
+                ></path>
               </svg>
             </button>
-            <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 z-50">
-              <a href="/area-do-aluno" class="block px-4 py-2 text-sm hover:bg-gray-100">Área do Aluno</a>
-              <a href="/biblioteca" class="block px-4 py-2 text-sm hover:bg-gray-100">Biblioteca</a>
-              <a (click)="scrollToSection('academic')" class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Conteúdo Programático</a>
+            <div
+              class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 z-50"
+            >
+              <a
+                href="/area-do-aluno"
+                class="block px-4 py-2 text-sm hover:bg-gray-100"
+                >Área do Aluno</a
+              >
+              <a
+                href="/biblioteca"
+                class="block px-4 py-2 text-sm hover:bg-gray-100"
+                >Biblioteca</a
+              >
+              <a
+                (click)="scrollToSection('academic')"
+                class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+                >Conteúdo Programático</a
+              >
             </div>
           </div>
 
           <!-- Professor -->
-          <a *ngIf="auth.role === 'professor'" href="/teacher-dashboard" class="nav-link">Painel do Professor</a>
+          <a
+            *ngIf="auth.role === 'professor'"
+            href="/teacher-dashboard"
+            class="nav-link"
+            >Painel do Professor</a
+          >
 
           <!-- Contato -->
-          <a (click)="openWhatsApp()" class="nav-link cursor-pointer">Contato</a>
+          <a (click)="openWhatsApp()" class="nav-link cursor-pointer"
+            >Contato</a
+          >
 
           <!-- Login / Cadastrar -->
           <div *ngIf="!auth.isLogged" class="flex items-center space-x-4 ml-4">
             <a href="/login" class="nav-link py-2">Entrar</a>
-            <a href="/cadastro" class="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary-dark transition-colors">Cadastrar</a>
+            <a
+              href="/cadastro"
+              class="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary-dark transition-colors"
+              >Cadastrar</a
+            >
           </div>
 
           <!-- Logout -->
-          <a *ngIf="auth.isLogged" (click)="logout()" class="nav-link text-red-500 hover:text-red-600 cursor-pointer ml-4">Sair</a>
+          <a
+            *ngIf="auth.isLogged"
+            (click)="logout()"
+            class="nav-link text-red-500 hover:text-red-600 cursor-pointer ml-4"
+            >Sair</a
+          >
         </div>
       </ng-container>
 
@@ -68,7 +121,9 @@
         aria-label="Abrir menu"
       >
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"></path>
+          <path
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+          ></path>
         </svg>
       </button>
     </div>
@@ -78,35 +133,79 @@
   <div class="md:hidden bg-white shadow-lg" [class.hidden]="!mobileMenuOpen">
     <ng-container *ngIf="auth$ | async as auth">
       <div class="pt-2 pb-4 space-y-1">
-        <a (click)="scrollToSection('home')" class="block px-4 py-2 hover:bg-gray-100">Home</a>
-        <a (click)="scrollToSection('about')" class="block px-4 py-2 hover:bg-gray-100">Sobre Nós</a>
+        <a
+          (click)="scrollToSection('home')"
+          class="block px-4 py-2 hover:bg-gray-100"
+          >Home</a
+        >
+        <a
+          (click)="scrollToSection('about')"
+          class="block px-4 py-2 hover:bg-gray-100"
+          >Sobre Nós</a
+        >
 
         <!-- Acadêmico (mobile) -->
         <div *ngIf="auth.role === 'aluno'" class="relative">
-          <button (click)="toggleAcademicMenu()" class="w-full text-left px-4 py-2 flex justify-between items-center hover:bg-gray-100">
+          <button
+            (click)="toggleAcademicMenu()"
+            class="w-full text-left px-4 py-2 flex justify-between items-center hover:bg-gray-100"
+          >
             Acadêmico
             <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4-4-4a1 1 0 010-1.414z"></path>
+              <path
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4-4-4a1 1 0 010-1.414z"
+              ></path>
             </svg>
           </button>
           <div class="bg-gray-50" [class.hidden]="!academicMenuOpen">
-            <a href="/area-do-aluno" (click)="mobileMenuOpen = false" class="block px-8 py-2 hover:bg-gray-100">Área do Aluno</a>
-            <a href="/biblioteca" (click)="mobileMenuOpen = false" class="block px-8 py-2 hover:bg-gray-100">Biblioteca</a>
-            <a (click)="scrollToSection('academic'); mobileMenuOpen = false" class="block px-8 py-2 hover:bg-gray-100 cursor-pointer">Conteúdo Programático</a>
+            <a
+              href="/area-do-aluno"
+              (click)="mobileMenuOpen = false"
+              class="block px-8 py-2 hover:bg-gray-100"
+              >Área do Aluno</a
+            >
+            <a
+              href="/biblioteca"
+              (click)="mobileMenuOpen = false"
+              class="block px-8 py-2 hover:bg-gray-100"
+              >Biblioteca</a
+            >
+            <a
+              (click)="scrollToSection('academic'); mobileMenuOpen = false"
+              class="block px-8 py-2 hover:bg-gray-100 cursor-pointer"
+              >Conteúdo Programático</a
+            >
           </div>
         </div>
 
-        <a *ngIf="auth.role === 'professor'" href="/teacher-dashboard" class="block px-4 py-2 hover:bg-gray-100">Painel do Professor</a>
+        <a
+          *ngIf="auth.role === 'professor'"
+          href="/teacher-dashboard"
+          class="block px-4 py-2 hover:bg-gray-100"
+          >Painel do Professor</a
+        >
 
-        <a (click)="openWhatsApp()" class="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Contato</a>
+        <a
+          (click)="openWhatsApp()"
+          class="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+          >Contato</a
+        >
 
         <div *ngIf="!auth.isLogged" class="border-t border-gray-200 pt-2">
           <a href="/login" class="block px-4 py-2 hover:bg-gray-100">Entrar</a>
-          <a href="/cadastro" class="block px-4 py-2 mx-2 my-1 text-white bg-secondary rounded hover:bg-secondary-dark">Cadastrar</a>
+          <a
+            href="/cadastro"
+            class="block px-4 py-2 mx-2 my-1 text-white bg-secondary rounded hover:bg-secondary-dark"
+            >Cadastrar</a
+          >
         </div>
 
         <div *ngIf="auth.isLogged" class="border-t border-gray-200 pt-2">
-          <a (click)="logout(); mobileMenuOpen = false" class="block px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer">Sair</a>
+          <a
+            (click)="logout(); mobileMenuOpen = false"
+            class="block px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer"
+            >Sair</a
+          >
         </div>
       </div>
     </ng-container>
@@ -122,10 +221,10 @@
       class="absolute inset-0 flex flex-col justify-center items-center text-white px-4 text-center animate-fade-in"
     >
       <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-      Seminário Teológico Arena
+        Seminário Teológico Arena
       </h1>
       <p class="text-lg md:text-xl max-w-2xl mb-8 px-4">
-      Formando teólogos à imagem de Cristo. Sua jornada de fé começa aqui.
+        Formando teólogos à imagem de Cristo. Sua jornada de fé começa aqui.
       </p>
       <button
         (click)="scrollToSection('courses')"
@@ -251,7 +350,7 @@
     >
       <div class="w-full md:w-1/2 mb-6">
         <img
-          src="https://placehold.co/600x400/26496f/ffffff?text=Curso+Básico+de+Teologia"
+          src="assets/basico_teologia.png"
           alt="Curso Básico de Teologia"
           class="w-full h-64 md:h-80 object-cover rounded-xl border-2 border-dashed border-gray-300"
           loading="lazy"
@@ -264,9 +363,15 @@
           Curso Básico de Teologia
         </h2>
         <p class="text-gray-600 mb-6">
-          Ideal para quem deseja iniciar os estudos bíblicos fundamentais.
-          Compreensão da Palavra de Deus, história da Igreja e fundamentos
-          teológicos.
+          Ideal para iniciantes ou para quem deseja rever os fundamentos da
+          Teologia Cristã. Neste curso introdutório, você será conduzido pelas
+          principais temáticas da fé cristã de forma clara, bíblica e
+          estruturada. Tudo isso com:<br />
+          ✅ Material didático incluído no valor do curso<br />
+          ✅ Aulas semipresenciais com acompanhamento próximo<br />
+          ✅ Professores qualificados<br />
+          ✅ Conteúdo abrangente: Bíblia, doutrinas cristãs, história da
+          igreja e muito mais
         </p>
         <button
           (click)="openWhatsApp()"
@@ -296,7 +401,7 @@
     <div class="flex flex-col md:flex-row items-center">
       <div class="w-full md:w-1/2 mb-8">
         <img
-          src="https://placehold.co/600x400/26496f/ffffff?text=Como+Funciona+o+Curso?"
+          src="assets/como_funciona.png"
           alt="Como funciona"
           class="w-full h-64 md:h-80 object-cover rounded-xl border-2 border-dashed border-gray-300"
           loading="lazy"
@@ -304,78 +409,51 @@
       </div>
       <div class="w-full md:w-1/2 md:pl-0 lg:pl-8 mt-4 md:mt-0">
         <h2 class="text-2xl md:text-3xl font-bold text-primary mb-6">
-          Como funciona o curso?
+          Como Funciona o Curso Semipresencial?
         </h2>
-        <ul class="space-y-4">
-          <li class="flex items-start">
-            <div
-              class="w-6 h-6 bg-secondary text-white rounded-full flex items-center justify-center mr-3 mt-1"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </div>
-            <span class="text-gray-700"
-              >Aulas presenciais e online com professores qualificados</span
-            >
-          </li>
-          <li class="flex items-start">
-            <div
-              class="w-6 h-6 bg-secondary text-white rounded-full flex items-center justify-center mr-3 mt-1"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                ></path>
-              </svg>
-            </div>
-            <span class="text-gray-700"
-              >Materiais didáticos inclusos (livros, vídeos, estudos
-              bíblicos)</span
-            >
-          </li>
-          <li class="flex items-start">
-            <div
-              class="w-6 h-6 bg-secondary text-white rounded-full flex items-center justify-center mr-3 mt-1"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                ></path>
-              </svg>
-            </div>
-            <span class="text-gray-700"
-              >Valor acessível</span
-            >
-          </li>
-        </ul>
+        <p class="text-gray-600 mb-6">
+          Nosso curso semipresencial te oferece bastante flexibilidade! Ele
+          funciona da seguinte maneira: <br /><br /><svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#fc904f"
+          >
+            <path
+              d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"
+            />
+          </svg>
+          Aula online - A maior parte do curso e o principal é feito através das
+          plataformas: encontros, testes, provas e material de leitura;<br /><br />
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#fc904f"
+          >
+            <path
+              d="M480-120 200-272v-240L40-600l440-240 440 240v320h-80v-276l-80 44v240L480-120Zm0-332 274-148-274-148-274 148 274 148Zm0 241 200-108v-151L480-360 280-470v151l200 108Zm0-241Zm0 90Zm0 0Z"
+            />
+          </svg>
+          Aula presencial (1 x ao mês): Uma vez ao mês teremos um encontro
+          presencial, para: realizar exames e atividades, tirar dúvidas
+          diretamente e promover a comunhão da turma.<br /><br />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#fc904f"
+          >
+            <path
+              d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Z"
+            />
+          </svg>
+          O aluno sempre saberá com antecedência a data do encontro presencial.
+        </p>
       </div>
     </div>
   </div>
@@ -385,7 +463,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div>
-        <h3 class="text-xl font-bold mb-4">Seminário Arena</h3>
+        <h3 class="text-xl font-bold mb-4">Seminário Teológico Arena</h3>
         <p class="text-light">
           Formando líderes na fé com excelência acadêmica e compromisso
           espiritual.
@@ -456,7 +534,9 @@
             >
           </li>
           <li>
-            <a href="/grade-curricular" class="hover:text-secondary transition-colors"
+            <a
+              href="/grade-curricular"
+              class="hover:text-secondary transition-colors"
               >Calendário Acadêmico</a
             >
           </li>
@@ -471,14 +551,18 @@
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
-            style="width: 30px">
+              style="width: 30px"
+            >
               <path
                 fill-rule="evenodd"
                 d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
                 clip-rule="evenodd"
               ></path>
             </svg>
-            <span>Av. Dr. Rubéns Farrula, 95 - Vila Rosali, São João de Meriti</span>
+            <span
+              >Av. Dr. Rubéns Farrula, 95 - Vila Rosali, São João de
+              Meriti</span
+            >
           </li>
           <li class="flex items-start">
             <svg

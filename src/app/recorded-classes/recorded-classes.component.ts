@@ -53,20 +53,22 @@ export class RecordedClassesComponent implements OnInit {
     });
   }
 
-  loadClasses(): void {
-    this.http
-      .get<AulaGravada[]>('https://seminario-teologico-arena-backend.vercel.app/aulas-gravadas')
-      .subscribe({
-        next: (data) => {
-          this.classes = data;
-           console.log('Aulas recebidas:', this.classes);
-          this.filterClasses();
-        },
-        error: (err) => {
-          console.error(err);
-        },
-      });
-  }
+ loadClasses(): void {
+  this.isLoading = true;
+
+  this.http.get<AulaGravada[]>('https://seminario-teologico-arena-backend.vercel.app').subscribe({
+    next: (data) => {
+      this.classes = data;
+      console.log('Aulas recebidas:', this.classes);
+      this.filterClasses();
+      this.isLoading = false; // ← aqui!
+    },
+    error: (err) => {
+      console.error(err);
+      this.isLoading = false; // ← aqui também!
+    },
+  });
+}
 
 saveProgress(): void {
   localStorage.setItem('aulasConcluidas', JSON.stringify(this.aulasConcluidas));

@@ -9,7 +9,8 @@ export interface Ebook {
   autor: string;
   categoria: string;
   modulo:string;
-  content: string
+  content: string;
+   quizLink:string
 }
 
 @Injectable({

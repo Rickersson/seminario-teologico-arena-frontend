@@ -258,18 +258,18 @@
               class="block text-sm font-medium text-gray-700 mb-1"
               >Módulo *</label
             >
-            <select
+           <select
               id="modulo"
               formControlName="modulo"
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg"
             >
-              <option value="" disabled selected>Selecione o módulo</option>
-              <option
-                *ngFor="let modulo of Module | keyvalue"
-                [value]="modulo.value"
-              >
-                {{ modulo.value }}
-              </option>
+              <option value="">Selecione o módulo</option>
+              <option value="Módulo I">Módulo I</option>
+              <option value="Módulo II">Módulo II</option>
+              <option value="Módulo III">Módulo III</option>
+              <option value="Módulo IV">Módulo IV</option>
+              <option value="Módulo V">Módulo V</option>
+              <option value="Módulo VI">Módulo VI</option>
             </select>
             <div
               *ngIf="
@@ -313,6 +313,20 @@
             </div>
           </div>
         </div>
+         <div>
+            <label
+              for="quizLink"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Link do Quiz *</label
+            >
+            <input
+              type="text"
+              id="quizLink"
+              formControlName="quizLink"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+              placeholder="https://forms.google.com/..."
+            />
+          </div>
 
         <!-- Botão de Envio -->
         <div class="mt-8 flex justify-end">

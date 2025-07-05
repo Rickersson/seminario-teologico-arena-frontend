@@ -25,7 +25,7 @@ export class UploadClassesComponent implements OnInit {
       autor:['', Validators.required],
       link: ['', Validators.required],
       categoria: ['', Validators.required],
-      quizLink: ['', Validators.required]
+     
     });
   }
 

@@ -8,7 +8,6 @@ export interface AulaGravada {
   nome: string;
   descricao: string;
   link: string;
-  quizLink:string
   modulo: string;
   autor: string;
   categoria: string;
