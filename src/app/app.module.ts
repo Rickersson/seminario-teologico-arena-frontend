@@ -57,7 +57,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
         JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        allowedDomains: ['https://seminario-teologico-arena-backend.vercel.app'], // ou sua API
+        allowedDomains: ['https://seminario-teologico-arena-backe-git-64c167-rickerssons-projects.vercel.app'], // ou sua API
         disallowedRoutes: ['http://localhost:3000/auth/login', 'https://seminario-teologico-arena-backend.onrender.com/auth/login'], // ou rota pública
       }}), 
    NgxMaskDirective, HttpClientModule

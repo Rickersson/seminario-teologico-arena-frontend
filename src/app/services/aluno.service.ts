@@ -20,7 +20,7 @@ export interface Aluno {
   providedIn: 'root',
 })
 export class AlunoService {
-  private apiUrl = 'https://seminario-teologico-arena-backend.vercel.app/alunos';
+  private apiUrl = 'https://seminario-teologico-arena-backe-git-64c167-rickerssons-projects.vercel.app/alunos';
 
   constructor(private http: HttpClient) {}
 

@@ -17,7 +17,7 @@ export interface Ebook {
   providedIn: 'root'
 })
 export class EbooksService {
-  private baseUrl = 'https://seminario-teologico-arena-backend.vercel.app/ebooks'; 
+  private baseUrl = 'https://seminario-teologico-arena-backe-git-64c167-rickerssons-projects.vercel.app/ebooks'; 
 
   constructor(private http: HttpClient) {}
 

@@ -18,7 +18,7 @@ export interface AulaGravada {
   providedIn: 'root'
 })
 export class RecordedClassesService {
-  private readonly API_URL = 'https://seminario-teologico-arena-backend.vercel.app/aulas-gravadas'; 
+  private readonly API_URL = 'https://seminario-teologico-arena-backe-git-64c167-rickerssons-projects.vercel.app/aulas-gravadas'; 
 
   constructor(private http: HttpClient) {}
 
