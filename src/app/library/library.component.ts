@@ -92,6 +92,7 @@ export class LibraryComponent implements OnInit {
 
   getModulosPermitidos(modulo: string): string[] {
     const ordem = [
+      'Módulo 0',
       'Módulo I',
       'Módulo II',
       'Módulo III',

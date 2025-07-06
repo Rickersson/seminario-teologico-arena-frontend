@@ -83,6 +83,7 @@ loadCheckboxProgress(): void {
 
   getModulosPermitidos(modulo: string): string[] {
     const ordem = [
+      'Módulo 0',
       'Módulo I',
       'Módulo II',
       'Módulo III',
